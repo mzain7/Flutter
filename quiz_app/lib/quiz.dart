@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/home_page.dart';
 import 'package:quiz_app/question_screen.dart';
+import 'package:quiz_app/result_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -23,15 +24,38 @@ class _QuizState extends State<Quiz> {
   void chooseAnswer(String answer) {
     answers.add(answer);
     if (answers.length == questions.length) {
-      answers = [];
       setState(() {
-        activeScreen = 'home-screen';
+        activeScreen = 'result-screen';
       });
     }
   }
 
+  void goHome() {
+    answers = [];
+    setState(() {
+      activeScreen = 'home-screen';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    Widget? currentScreen;
+    switch (activeScreen) {
+      case 'home-screen':
+        currentScreen = MyHomePage(switchScreen);
+        break;
+      case 'question-screen':
+        currentScreen = QuestionScreen(chooseAnswer);
+        break;
+      case 'result-screen':
+        currentScreen = ResultsScreen(
+          chosenAnswers: answers,
+          onRestart: goHome,
+        );
+        break;
+
+      default:
+    }
     return MaterialApp(
       title: 'Quiz Time',
       theme: ThemeData(
@@ -52,9 +76,7 @@ class _QuizState extends State<Quiz> {
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 30),
             alignment: Alignment.center,
-            child: activeScreen == 'home-screen'
-                ? MyHomePage(switchScreen)
-                : QuestionScreen(chooseAnswer),
+            child: currentScreen,
           ),
         ),
       ),

@@ -41,7 +41,9 @@ class _QuestionScreenState extends State<QuestionScreen> {
         ),
         ...currentQuestion.getShuffleAnswers().map(
               (option) => AnswerButton(option, () {
-                answerQuestion(option);
+                Future.delayed(const Duration(milliseconds: 400), () {
+                  answerQuestion(option);
+                });
               }),
             ),
       ],
