@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,44 +13,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Quiz Time',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        brightness: Brightness.dark,
+        colorSchemeSeed: Colors.purple,
       ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Column(
-          children: [
-            Image.asset('assets/images/quiz-logo.png'),
-            const Text('Lunch'),
-            OutlinedButton(
-              onPressed: () {
-                // Add your button click logic here
-              },
-              style: OutlinedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                ),
-                side: const BorderSide(color: Colors.blue, width: 2),
-                textStyle: const TextStyle(
-                  color: Colors.blue,
-                  fontSize: 20,
-                ),
-              ),
-              child: const Text('Beautiful Button'),
+      home: Scaffold(
+        appBar: AppBar(),
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.blue, Color.fromARGB(255, 25, 2, 71)],
             ),
-          ],
+          ),
+          child: MyHomePage(),
         ),
       ),
     );
