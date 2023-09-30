@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Expense Tracker',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 220, 120, 13)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 52, 2, 90)),
         useMaterial3: true,
       ),
       home: const Expenses(),
