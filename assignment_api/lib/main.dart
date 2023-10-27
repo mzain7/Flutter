@@ -1,4 +1,4 @@
-import 'package:assignment_api/screens/home_screen.dart';
+import 'package:assignment/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,9 +11,6 @@ var kColorScheme =
 var kDarkColorScheme = ColorScheme.fromSeed(
     seedColor: const Color.fromARGB(255, 20, 6, 99),
     brightness: Brightness.dark);
-
-    
-    
 
 var darkTheme = ThemeData.dark().copyWith(
   colorScheme: kDarkColorScheme,
@@ -31,7 +28,6 @@ var darkTheme = ThemeData.dark().copyWith(
         foregroundColor: kDarkColorScheme.onPrimaryContainer),
   ),
   textTheme: GoogleFonts.latoTextTheme(ThemeData.dark().textTheme).copyWith(
-
     titleLarge: const TextStyle(
       fontWeight: FontWeight.normal,
       color: Colors.white,
@@ -76,7 +72,7 @@ class MyApp extends StatelessWidget {
       theme: theme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      home:  const HomeScreen(),
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

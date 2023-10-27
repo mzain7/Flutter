@@ -1,4 +1,4 @@
-import 'package:assignment_api/models/product.dart';
+import 'package:assignment/models/product.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsScreen extends StatelessWidget {

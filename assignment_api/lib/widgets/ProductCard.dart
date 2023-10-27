@@ -1,5 +1,5 @@
-import 'package:assignment_api/models/product.dart';
-import 'package:assignment_api/screens/product_screen.dart';
+import 'package:assignment/models/product.dart';
+import 'package:assignment/screens/product_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {

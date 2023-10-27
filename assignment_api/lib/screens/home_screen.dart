@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:assignment_api/models/product.dart';
-import 'package:assignment_api/widgets/ProductCard.dart';
+import 'package:assignment/models/product.dart';
+import 'package:assignment/widgets/ProductCard.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
