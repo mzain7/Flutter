@@ -1,4 +1,4 @@
-# assignment_2
+# assignment_api
 
 A new Flutter project.
 

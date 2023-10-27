@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:assignment_2/widgets/ProductCard.dart';
+import 'package:assignment_api/models/product.dart';
+import 'package:assignment_api/widgets/ProductCard.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -11,7 +12,8 @@ class HomeScreen extends StatelessWidget {
     final response =
         await http.get(Uri.parse('https://dummyjson.com/products'));
     if (response.statusCode == 200) {
-      return (json.decode(response.body))['products'];
+      var data = json.decode(response.body)['products'];
+      return data.map((product) => Product.fromJson(product)).toList();
     } else {
       throw Exception('Failed to load product');
     }

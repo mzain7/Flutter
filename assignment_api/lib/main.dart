@@ -1,4 +1,4 @@
-import 'package:assignment_2/screens/splash_screen.dart';
+import 'package:assignment_api/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
       theme: theme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      home: const SplahScreen(),
+      home:  const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
