@@ -23,7 +23,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> fetchAPIData() async {
-    print('Fetching API Data...'	);
+    print('Fetching API Data...');
     var response = await http.get(Uri.parse('https://dummyjson.com/products'));
     if (response.statusCode == 200) {
       var data = jsonDecode(response.body);
@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
         FirebaseFirestore.instance.collection('products');
     productsCollection.get().then((snapshot) {
       for (DocumentSnapshot ds in snapshot.docs) {
-        await ds.reference.delete();
+        ds.reference.delete();
       }
     });
     // productsCollection.doc('1').set({'title': 'Hello'});
@@ -61,16 +61,18 @@ class _MyHomePageState extends State<MyHomePage> {
     return products;
   }
 
-  Future<void> deleteData(String id){
+  Future<void> deleteData(String id) {
     final CollectionReference productsCollection =
         FirebaseFirestore.instance.collection('products');
     productsCollection.doc(id).delete();
+    return Future.value();
   }
 
-  Future<void> updateData(Product product){
+  Future<void> updateData(Product product) {
     final CollectionReference productsCollection =
         FirebaseFirestore.instance.collection('products');
     productsCollection.doc(product.id.toString()).update(product.toJson());
+    return Future.value();
   }
 
   @override
