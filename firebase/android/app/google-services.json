@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "284150318451",
+    "firebase_url": "https://practice-99dd9-default-rtdb.firebaseio.com",
+    "project_id": "practice-99dd9",
+    "storage_bucket": "practice-99dd9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284150318451:android:acfcaff99c979968993106",
+        "android_client_info": {
+          "package_name": "com.example.firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI2ut-G_8lNEvIoK8evUbm2NMFiAvyMwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

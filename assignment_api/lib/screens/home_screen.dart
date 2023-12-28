@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Theme')),
+      appBar: AppBar(title: const Text('Home')),
       body: FutureBuilder(
         future: getProduct(),
         builder: (context, snapshot) {
