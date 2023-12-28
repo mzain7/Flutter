@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:noti/firebase_notification.dart';
 import 'package:noti/firebase_options.dart';
 
+
+
+final navigatorKey = GlobalKey<NavigatorState>();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -23,6 +27,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(),
+      navigatorKey: navigatorKey,
     );
   }
 }
